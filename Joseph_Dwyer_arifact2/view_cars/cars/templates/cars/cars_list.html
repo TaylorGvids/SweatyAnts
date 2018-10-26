@@ -1,0 +1,28 @@
+<!-- page/templates/car1.html -->
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Available Cars</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/cars_list.css' %}>
+    </head>
+    <body>
+	{% for car in cars %}
+	    <div>
+		<h1>
+		{{car.car_makename }}
+	        {{car.car_model }}
+		{{car.car_series }}
+ 		{{car.car_seriesyear }}
+		</h1>
+		<li>{{car.car_enginesize}}</li>
+		<li>{{car.car_fuelsystem}}</li>
+		<li>Seats: {{car.car_seatingcapacity}}</li>
+		<li>{{car.car_drive}}</li>
+	    </div>
+	{% endfor %}
+    </body>
+</html>
